@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useSelector, useDispatch } from "react-redux";
 import { updateQuantity, removeFromCart } from "../store/cartSlice";
 import { FaPlus, FaMinus, FaTrash } from "react-icons/fa";

@@ -1,0 +1,21 @@
+services:
+  backend:
+    image: thanathorn15/backend:latest
+    container_name: backend
+    ports:
+      - "5400:5400" # ✅ ตรวจสอบให้แน่ใจว่า Backend ใช้พอร์ตนี้จริง
+    networks:
+      - my_network
+
+  frontend:
+    image: thanathorn15/frontend:latest
+    container_name: frontend
+    ports:
+      - "5173:5173" # ✅ ให้ตรงกับที่ Vite ใช้
+    depends_on:
+      - backend
+    networks:
+      - my_network
+
+networks:
+  my_network: # ✅ เพิ่ม networks ที่ท้ายไฟล์
